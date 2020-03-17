@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:guangglo/utility/my_style.dart';
 
@@ -10,11 +11,48 @@ class _RegisterState extends State<Register> {
   // Field
 
   // Method
-  Widget nameForm() {
+
+     Widget nameForm() {
+    Color color = Colors.purple;
     return Container(
-      child: TextField(),
+      child: TextField(
+        decoration: InputDecoration(
+            enabledBorder:
+                UnderlineInputBorder(borderSide: BorderSide(color: color)),
+            icon: Icon(
+              Icons.face,
+              size: 36.0,
+              color: color,
+            ),
+            helperText: 'Type Your Name in Blank',
+            helperStyle: TextStyle(color: color),
+            labelText: 'Display Name :',
+            labelStyle: TextStyle(color: color)),
+      ),
     );
   }
+
+  Widget emailForm() {
+    Color color = Colors.purple;
+    return Container(
+      child: TextField(
+        decoration: InputDecoration(
+            enabledBorder:
+                UnderlineInputBorder(borderSide: BorderSide(color: color)),
+            icon: Icon(
+              Icons.face,
+              size: 36.0,
+              color: color,
+            ),
+            helperText: 'Type Your Email in Blank',
+            helperStyle: TextStyle(color: color),
+            labelText: 'Email :',
+            labelStyle: TextStyle(color: color)),
+      ),
+    );
+  }
+
+ 
 
   Widget cameraButton() {
     return IconButton(
@@ -78,6 +116,7 @@ class _RegisterState extends State<Register> {
           showAvartar(),
           showButton(),
           nameForm(),
+          emailForm(),
         ],
       ),
     );
